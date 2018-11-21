@@ -42,9 +42,9 @@
 				$(html).append(rows);
 				var selectedam = "";
 				var selectedpm = "";
-				if(val[2] == "AM") selectedam = "selected";
-				if(val[2] == "PM") selectedpm = "selected";
-				$(html).append('<div class="kpicker_row kpicker_mer d-none"><div class="kpicker_number '+selectedam+'" data-value="AM">AM</div><div class="kpicker_number '+selectedpm+'" data-value="PM">PM</div></div>');
+				if (val[2] == "AM") selectedam = "selected";
+				if (val[2] == "PM") selectedpm = "selected";
+				$(html).append('<div class="kpicker_row kpicker_mer d-none"><div class="kpicker_number ' + selectedam + '" data-value="AM">AM</div><div class="kpicker_number ' + selectedpm + '" data-value="PM">PM</div></div>');
 
 				$("body").append(html);
 				new Tether({
@@ -58,6 +58,7 @@
 
 		var hour = [];
 		$(document).on("click", ".kpicker_hour .kpicker_number", function () {
+			hour = [];
 			$(".kpicker_hour").addClass("d-none");
 			$(".kpicker_minutes").removeClass("d-none");
 			hour.push($(this).attr("data-value"));
@@ -72,7 +73,7 @@
 			$(".kpicker_mer").removeClass("d-none");
 			hour.push($(this).attr("data-value"));
 			var target = $(this).parents(".kpicker_main").attr("data-target");
-			$("#"+target).val(hour[0]+":"+hour[1]+" "+hour[2]);
+			$("#" + target).val(hour[0] + ":" + hour[1] + " " + hour[2]);
 			$(".kpicker_main").remove();
 			hour = [];
 		});

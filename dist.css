@@ -9,7 +9,7 @@
     z-index: 9999;
     padding: 5px;
 	display: block;
-	min-width: 200px;
+	min-width: 270px;
 }
 .kpicker_main .kpicker_row{
 	display: flex;
